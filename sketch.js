@@ -28,6 +28,7 @@ function setup() {
   bg=createSprite(500,200,800,400);
   bg.addImage("fondo",bgImg);
   bg.scale=5;
+  bg.velocityX=-5;
   
   //Tierra(jugador)
   earth=createSprite(displayWidth/50,200,50,50);
@@ -70,7 +71,8 @@ function draw() {
       bg.x = width/2;
     }
     //Objetos se muevan con la cámara
-    camera.x=bg.x;
+    camera.x=earth.x;
+    camera.y=displayHeight/2;
     spawnVirus();
     if(virusGroup.isTouching(earth)){
       //Animación de perder corazón
